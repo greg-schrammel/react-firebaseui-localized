@@ -1,0 +1,27 @@
+{
+  "name": "react-firebaseui-loacalized",
+  "version": "1.0.0",
+  "description": "React wrapper over firebaseui package with simpler localization",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/greg-schrammel/react-firebaseui-loacalized.git"
+  },
+  "keywords": [
+    "firebase",
+    "react",
+    "auth",
+    "firebaseui",
+    "i18n",
+    "localized"
+  ],
+  "author": "gregory schrammel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/greg-schrammel/react-firebaseui-loacalized/issues"
+  },
+  "homepage": "https://github.com/greg-schrammel/react-firebaseui-loacalized#readme"
+}
