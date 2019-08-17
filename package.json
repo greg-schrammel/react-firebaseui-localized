@@ -1,27 +1,15 @@
 {
-<<<<<<< HEAD
   "name": "react-firebaseui-localized",
   "version": "1.0.0",
   "description": "React wrapper over firebaseui package with simpler localization",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --mode production",
-=======
-  "name": "react-firebaseui-loacalized",
-  "version": "1.0.0",
-  "description": "React wrapper over firebaseui package with simpler localization",
-  "main": "index.js",
-  "scripts": {
->>>>>>> a8d132f0c328f842cfd07d305793589c24cd17a3
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-<<<<<<< HEAD
     "url": "git+https://github.com/greg-schrammel/react-firebaseui-localized.git"
-=======
-    "url": "git+https://github.com/greg-schrammel/react-firebaseui-loacalized.git"
->>>>>>> a8d132f0c328f842cfd07d305793589c24cd17a3
   },
   "keywords": [
     "firebase",
@@ -34,7 +22,6 @@
   "author": "gregory schrammel",
   "license": "MIT",
   "bugs": {
-<<<<<<< HEAD
     "url": "https://github.com/greg-schrammel/react-firebaseui-localized/issues"
   },
   "homepage": "https://github.com/greg-schrammel/react-firebaseui-localized#readme",
@@ -49,9 +36,4 @@
   "peerDependencies": {
     "react": "^16.9.0"
   }
-=======
-    "url": "https://github.com/greg-schrammel/react-firebaseui-loacalized/issues"
-  },
-  "homepage": "https://github.com/greg-schrammel/react-firebaseui-loacalized#readme"
->>>>>>> a8d132f0c328f842cfd07d305793589c24cd17a3
 }
