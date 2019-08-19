@@ -9,7 +9,6 @@ see: https://github.com/firebase/firebaseui-web
 
 ## usage
 
-make sure you have firebase in the window object
 
 ```js
 import FirebaseUIAuth from "react-firebaseui-localized";
