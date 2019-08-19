@@ -1,35 +1,28 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from 'react';
 
-const cachedScripts = [];
 function useScript(src) {
   const [state, setState] = useState({ loaded: false, error: false });
+  const script = useRef();
 
   useEffect(() => {
-    if (cachedScripts.includes(src))
-      return setState({ loaded: true, error: false });
-    cachedScripts.push(src);
+    script.current = document.createElement('script');
+    script.current.src = src;
+    script.current.async = true;
 
-    const script = document.createElement("script");
-    script.src = src;
-    script.async = true;
+    const onScriptLoad = () => setState({ loaded: src, error: false });
 
-    const onScriptLoad = () => setState({ loaded: true, error: false });
-
-    const onScriptError = () => {
-      const index = cachedScripts.indexOf(src);
-      if (index >= 0) cachedScripts.splice(index, 1);
-      script.remove();
-      setState({ loaded: true, error: true });
+    const onScriptError = e => {
+      script.current.remove();
+      setState({ loaded: false, error: e });
     };
 
-    script.addEventListener("load", onScriptLoad);
-    script.addEventListener("error", onScriptError);
+    script.current.addEventListener('load', onScriptLoad);
+    script.current.addEventListener('error', onScriptError);
 
-    document.body.appendChild(script);
-
+    document.body.appendChild(script.current);
     return () => {
-      script.removeEventListener("load", onScriptLoad);
-      script.removeEventListener("error", onScriptError);
+      script.current.removeEventListener('load', onScriptLoad);
+      script.current.removeEventListener('error', onScriptError);
     };
   }, [src]);
 
