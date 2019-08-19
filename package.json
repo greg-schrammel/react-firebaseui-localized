@@ -1,6 +1,6 @@
 {
   "name": "react-firebaseui-localized",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React wrapper over firebaseui package with simpler localization",
   "main": "dist/index.js",
   "scripts": {

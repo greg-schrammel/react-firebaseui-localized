@@ -5,11 +5,14 @@ const firebaseui_src = lang =>
   `https://www.gstatic.com/firebasejs/ui/4.1.0/firebase-ui-auth__${lang}.js`;
 const FIREBASEUI_CONTAINER_ID = "firebaseui_container";
 
-function FirebaseUIAuth({ auth, config, lang }) {
+function FirebaseUIAuth({ auth, config, lang, firebase }) {
   const [loaded, error] = useScript(firebaseui_src(lang));
   const container = useRef();
   const app = useRef();
 
+  useEffect(() => {
+    window.firebase = firebase;
+  }, [])
   useEffect(() => {
     if (!loaded) return;
     if (error) throw error;
