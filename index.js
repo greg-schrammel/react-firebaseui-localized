@@ -19,7 +19,7 @@ function FirebaseUIAuth({ auth, config, lang, firebase }) {
     (async () => {
       if (app.current) await app.current.delete();
       container.current.innerHTML = "";
-      const firebaseUI = new window.firebaseui.auth.AuthUI(auth);
+      const firebaseUI = window.firebaseui.auth.AuthUI.getInstance() || new window.firebaseui.auth.AuthUI(auth);
       firebaseUI.start(`#${FIREBASEUI_CONTAINER_ID}`, config);
       app.current = window.firebase.app("[DEFAULT]-firebaseui-temp");
     })();
