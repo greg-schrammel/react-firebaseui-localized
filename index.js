@@ -25,7 +25,7 @@ function FirebaseUIAuth({ auth, config, lang, version, rtl, firebase }) {
       firebaseUI.start(`#${FIREBASEUI_CONTAINER_ID}`, config);
       app.current = window.firebase.app("[DEFAULT]-firebaseui-temp");
     })();
-  }, [auth, config, error, loaded]);
+  }, [auth, config, state.value]);
 
   return (
     <>
