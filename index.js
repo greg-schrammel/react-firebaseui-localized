@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, Fragment } from "react";
 import useScript from "./useScript";
 
 const FIREBASEUI_CONTAINER_ID = "firebaseui_container";
@@ -28,16 +28,15 @@ function FirebaseUIAuth({ auth, config, lang, version, rtl, firebase }) {
   }, [auth, config, state.value]);
 
   return (
-    <>
-      <link
-        type="text/css"
-        rel="stylesheet"
-        href={`https://www.gstatic.com/firebasejs/ui/${version}/firebase-ui-auth${
-          rtl ? "-rtl" : ""
-        }.css`}
-      />
-      <div ref={container} id={FIREBASEUI_CONTAINER_ID} />
-    </>
+    /*#__PURE__*/
+    React.createElement(Fragment, null, /*#__PURE__*/React.createElement("link", {
+      type: "text/css",
+      rel: "stylesheet",
+      href: `https://www.gstatic.com/firebasejs/ui/${version}/firebase-ui-auth${rtl ? "-rtl" : ""}.css`
+    }), /*#__PURE__*/React.createElement("div", {
+      ref: container,
+      id: FIREBASEUI_CONTAINER_ID
+    }))
   );
 }
 
